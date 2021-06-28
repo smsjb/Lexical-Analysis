@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> 
+#include <cmath>
 #include <iostream> // cout, endl
 #include <fstream> // open, is_open, close, ignore
 #include <string> // string, find_last_of, substr
@@ -12,7 +12,7 @@
 using namespace std;
 
 struct table{
-	//1~4 [0]¤£©ñ 
+	//1~4 [0]ï¿½ï¿½ï¿½ï¿½ 
 	vector<string> one ;
 	vector<string> two ;
 	vector<string> three ;
@@ -38,7 +38,7 @@ class tablefc {
 		//1	Table1.table 
 		fname = "Table1.table";
 		fstream _file1( fname.c_str()) ;
-		while ( !_file1.eof() ) { //¤£¬O³Ì«á¤@¦æ 
+		while ( !_file1.eof() ) { //ï¿½ï¿½ï¿½Oï¿½Ì«ï¿½@ï¿½ï¿½ 
 
    			getline(_file1, str, '\n');  
        		alltb.one.push_back(str);
@@ -47,7 +47,7 @@ class tablefc {
   		
   		fname = "Table2.table";
 		fstream _file2( fname.c_str()) ;
-		while ( !_file2.eof() ) { //¤£¬O³Ì«á¤@¦æ 
+		while ( !_file2.eof() ) { //ï¿½ï¿½ï¿½Oï¿½Ì«ï¿½@ï¿½ï¿½ 
 
    			getline(_file2, str, '\n');  
        		alltb.two.push_back(str);
@@ -56,7 +56,7 @@ class tablefc {
   		
   		fname = "Table3.table";
 		fstream _file3( fname.c_str()) ;
-		while ( !_file3.eof() ) { //¤£¬O³Ì«á¤@¦æ 
+		while ( !_file3.eof() ) { //ï¿½ï¿½ï¿½Oï¿½Ì«ï¿½@ï¿½ï¿½ 
 
    			getline(_file3, str, '\n');  
        		alltb.three.push_back(str);
@@ -65,7 +65,7 @@ class tablefc {
   		
   		fname = "Table4.table";
 		fstream _file4( fname.c_str()) ;
-		while ( !_file4.eof() ) { //¤£¬O³Ì«á¤@¦æ 
+		while ( !_file4.eof() ) { //ï¿½ï¿½ï¿½Oï¿½Ì«ï¿½@ï¿½ï¿½ 
 
    			getline(_file4, str, '\n');  
        		alltb.four.push_back(str);
@@ -77,18 +77,18 @@ class tablefc {
   		alltb.sev.resize(100);
 	}
 	
-	//Åª«ü¥O 
-	 read( string & fname){
+	//Åªï¿½ï¿½ï¿½O 
+	void read( string & fname){
 		int i = 0 ;
 		string str; 
 
 		cout<<"input file name: ";
 		cin>>fname;
 		
-		ifstream _file( fname.c_str()) ; // §â¦W¬°fnameªºÀÉ®×¥´¶} 
-		if (_file.is_open()) { //ÀÉ®×¦s¦b 
+		ifstream _file( fname.c_str()) ; // ï¿½ï¿½Wï¿½ï¿½fnameï¿½ï¿½ï¿½É®×¥ï¿½ï¿½} 
+		if (_file.is_open()) { //ï¿½É®×¦sï¿½b 
 		
-	  		while ( !_file.eof() ) { //¤£¬O³Ì«á¤@¦æ 
+	  		while ( !_file.eof() ) { //ï¿½ï¿½ï¿½Oï¿½Ì«ï¿½@ï¿½ï¿½ 
 
         		getline(_file, str, '\n');  
         		instr.push_back(str);
@@ -106,7 +106,7 @@ class tablefc {
 	
 
 	
-	//¤Átoken   
+	//ï¿½ï¿½token   
 	void cut(){
 		
 		string token="\0",tmp="\0";
@@ -116,7 +116,7 @@ class tablefc {
 		
 		for(int i=0; i<instr.size(); i++){
 			cout<<instr[i]<<endl;
-			//¤Átoken 
+			//ï¿½ï¿½token 
 			for(int j=0; j<instr[i].size(); j++){
 				tmp=instr[i][j];
 				token="\0";
@@ -166,9 +166,9 @@ class tablefc {
 		 				string bf = token;
 						for (int j=0; j <token.size(); j++){  
 							if((int)alltb.six[i][j]>=97 && (int)alltb.six[i][j]<=122) //a~z 
-       							token[j] = tolower(token[j]);  //¤j¼gÅÜ¤p¼g  
+       							token[j] = tolower(token[j]);  //ï¿½jï¿½gï¿½Ü¤pï¿½g  
        						else
-       							token[j] = toupper(token[j]); //¤p¼gÅÜ¤j¼g 
+       							token[j] = toupper(token[j]); //ï¿½pï¿½gï¿½Ü¤jï¿½g 
 						}
        			
 						if(token == alltb.six[i]){
@@ -219,7 +219,7 @@ class tablefc {
 				
 			}
 			
-			//¤À¹j 
+			//ï¿½ï¿½ï¿½j 
 			temp.tb=0;
 			temp.val=0;
 			temp.name="\0";
@@ -228,7 +228,7 @@ class tablefc {
 		}
 	}
 	
-	int sum(string str){  //ºâasciiÁ`©M 
+	int sum(string str){  //ï¿½ï¿½asciiï¿½`ï¿½M 
 		int num =0;
 		for(int i =0; i<str.size(); i++)
 			num = (int)str[i] + num;	
@@ -237,11 +237,11 @@ class tablefc {
 	
 	void hash( string str, int tb){
 
-		int ip =sum(str)%100; //ºâ¦ì¸m 
+		int ip =sum(str)%100; //ï¿½ï¿½ï¿½m 
 		
 		if(tb==5){
 		
-				while(alltb.five[ip]!="\0"){  //¸I¼² 
+				while(alltb.five[ip]!="\0"){  //ï¿½Iï¿½ï¿½ 
 					ip++;
 					if(ip>=100)
 						ip=ip%100;
@@ -296,9 +296,9 @@ class tablefc {
 		 	string bf = key;
 			for (int j=0; j <key.size(); j++){  
 				if((int)alltb.one[i][j]>=97 && (int)alltb.one[i][j]<=122)  //a~z 
-       				key[j] = tolower(key[j]);  //¤j¼gÅÜ¤p¼g  
+       				key[j] = tolower(key[j]);  //ï¿½jï¿½gï¿½Ü¤pï¿½g  
        			else
-       				key[j] = toupper(key[j]); //¤p¼gÅÜ¤j¼g 
+       				key[j] = toupper(key[j]); //ï¿½pï¿½gï¿½Ü¤jï¿½g 
 			}
 			 
 			if(key == alltb.one[i]){
@@ -317,9 +317,9 @@ class tablefc {
 			string bf = key;
 			for (int j=0; j <key.size(); j++){  
 				if((int)alltb.two[i][j]>=97 && (int)alltb.two[i][j]<=122) //a~z 
-       				key[j] = tolower(key[j]);  //¤j¼gÅÜ¤p¼g  
+       				key[j] = tolower(key[j]);  //ï¿½jï¿½gï¿½Ü¤pï¿½g  
        			else
-       				key[j] = toupper(key[j]); //¤p¼gÅÜ¤j¼g 
+       				key[j] = toupper(key[j]); //ï¿½pï¿½gï¿½Ü¤jï¿½g 
 			}
        			
        		
@@ -337,9 +337,9 @@ class tablefc {
 		 	string bf = key;
 			for (int j=0; j <key.size(); j++){  
 				if((int)alltb.three[i][j]>=97 && (int)alltb.three[i][j]<=122) //a~z 
-       				key[j] = tolower(key[j]);  //¤j¼gÅÜ¤p¼g  
+       				key[j] = tolower(key[j]);  //ï¿½jï¿½gï¿½Ü¤pï¿½g  
        			else
-       				key[j] = toupper(key[j]); //¤p¼gÅÜ¤j¼g 
+       				key[j] = toupper(key[j]); //ï¿½pï¿½gï¿½Ü¤jï¿½g 
 			}
        			
 			if(key == alltb.three[i]){
@@ -372,9 +372,9 @@ class tablefc {
 		 	string bf = key;
 			for (int j=0; j <key.size(); j++){  
 				if((int)alltb.six[i][j]>=97 && (int)alltb.six[i][j]<=122) //a~z 
-       				key[j] = tolower(key[j]);  //¤j¼gÅÜ¤p¼g  
+       				key[j] = tolower(key[j]);  //ï¿½jï¿½gï¿½Ü¤pï¿½g  
        			else
-       				key[j] = toupper(key[j]); //¤p¼gÅÜ¤j¼g 
+       				key[j] = toupper(key[j]); //ï¿½pï¿½gï¿½Ü¤jï¿½g 
 			}
        			
 			if(key == alltb.six[i]){
@@ -410,7 +410,7 @@ int main() {
 	
 	int j =0;
 			str=fname+"_out.txt";
-            ofstream out(str.c_str());  //¿é¥XÀÉ 
+            ofstream out(str.c_str());  //ï¿½ï¿½Xï¿½ï¿½ 
             for(int i=0; i < tb.altk.size(); i++){
                 out << tb.instr[i]<<endl;
                 
